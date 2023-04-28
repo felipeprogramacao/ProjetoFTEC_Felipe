@@ -9,6 +9,12 @@ $conteudo = $_POST['conteudo'];
 $nome = $_SESSION['usuario'];
 $materia = $_POST['materia'];
 
+$nome_foto = $_FILES['fot']['name'];
+$local_foto = $_FILES['fot']['tmp_name'];
+$destino='../Assets/imagens/'.$nome_foto;
+
+move_uploaded_file($local_foto,$destino);
+
 // Prepara e executa a query SQL para inserir o novo registro na tabela "usuarios"
 $stmt = $pdo->prepare("INSERT INTO conteudos (titulo, conteudo, nome, materia) VALUES (:titulo, :conteudo, :nome, :materia)");
 
