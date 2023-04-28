@@ -27,7 +27,7 @@ include('../../php/lista_materias_prof.php')
     </header>
     <main>
         <section class="section">
-            <form action='../../php/criar_conteudo.php' method="post">
+            <form action='../../php/criar_conteudo.php' method="post" enctype="multipart/form-data">
                 <h2>Cadastrar um novo conteudo</h2><br>
                 <select name="materia" id="materia" required>
                     <?php foreach ($materias as $materia): ?>
@@ -38,6 +38,7 @@ include('../../php/lista_materias_prof.php')
                 <input type="text" name="titulo" value=""><br>
                 <label for="conteudo">Conteúdo</label><br>
                 <textarea name="conteudo"></textarea><br>
+                <input type="file" name="fot" ><br>
                 <input type="submit" value="Cadastrar Conteúdo">
             </form>
         </section>
